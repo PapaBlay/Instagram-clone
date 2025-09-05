@@ -28,3 +28,40 @@ const posts = [
     }
 ]
 
+let card = document.getElementById("card")
+let post = document.getElementById("post")
+let heart = document.getElementById("icon-heart")
+let likesEl = document.getElementById("likes")
+let likes = 21
+
+// post.addEventListener("dblclick", function() {
+//     increaseLikes()
+// })
+// heart.addEventListener("click", function(){
+//     increaseLikes()
+// })
+
+// function increaseLikes(){
+//     likes += 1
+//     likesEl.textContent = likes
+// }
+
+function loadPosts(){
+    for(let i = 0; i < posts.length; i++){
+        card.innerHTML += `<section>
+                <div class="container">
+                    <img class="avatar"  src=${posts[i].avatar} alt="avatar of user">
+                    <p class="name">${posts[i].name}</p>
+                    <p class="location">${posts[i].location}</p>
+                    <img  class="post" id="post" src=${posts[i].post} alt="potrait of vangogh">
+                </div>
+                <div class="icon-pack">
+                    <img class="icon" id="icon-heart" src="images/icon-heart.png" alt="heart shaped icon">
+                    <img class="icon"  src="images/icon-comment.png" alt="comment icon">
+                    <img class="icon"  src="images/icon-dm.png" alt="message icon">
+                </div>
+                <p class="likes"><span id="likes">${posts[i].likes}</span> likes</p>
+                <p class="comment"><span>${posts[i].username}</span>${posts[i].comment}</p>
+            </section>`
+    }
+}
