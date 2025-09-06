@@ -48,7 +48,7 @@ let likes = 21
 
 function loadPosts(){
     for(let i = 0; i < posts.length; i++){
-        card.innerHTML += `<section>
+        card.innerHTML += `<section class=new-post>
                 <div class="container">
                     <img class="avatar"  src=${posts[i].avatar} alt="avatar of user">
                     <p class="name">${posts[i].name}</p>
@@ -65,3 +65,5 @@ function loadPosts(){
             </section>`
     }
 }
+
+loadPosts()
